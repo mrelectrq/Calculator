@@ -2,10 +2,16 @@ package com.example.startaplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private TextView one;
@@ -35,14 +41,23 @@ public class MainActivity extends AppCompatActivity {
     private double result=0;
     private char check;
     private String Edit;
-
+    private RecyclerView numberList;
     private TextView resultCalc;
-
+    public String result_string;
+    final ArrayList<String> rezultatele = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        rezultatele.add("EGALITATE TEST?");
+        // RecyclerView/////////////////////////////////////////////////////
+
+
+
+
+        ///////////////////////////////////////////////////////
         one = findViewById(R.id.button_one);
         one.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -179,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 check = ADUNARE;
                 val1 = Double.parseDouble("0"+resultCalc.getText()) ;
+                result_string+="+"+resultCalc.getText(); //RecycleView
                 resultCalc.setHint(resultCalc.getText());
                 resultCalc.setText(null);
             }
@@ -193,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
                 val1 = Double.parseDouble("0"+resultCalc.getText());
                 resultCalc.setHint(resultCalc.getText());
                 resultCalc.setText(null);
+
             }
         });
 
@@ -231,8 +248,20 @@ public class MainActivity extends AppCompatActivity {
                     val2 = Double.parseDouble("0"+ resultCalc.getText() );
                     calculation();
 
+
+                    rezultatele.add(result_string+"="+result);
+                    RecycleAfis();
+
             }
         });
+    }
+
+    public void RecycleAfis(){
+        numberList=findViewById(R.id.recycler_view);
+        numberList.setLayoutManager(new LinearLayoutManager(this));
+        numberList.setHasFixedSize(true);
+        StringsAdapter adapter = new StringsAdapter(this,rezultatele);
+        numberList.setAdapter(adapter);
     }
 
     public String back(String str) {
