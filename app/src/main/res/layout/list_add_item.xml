@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@color/sampleButton">
 
-	<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:id="@+id/number_result_string"
-			android:layout_gravity="center_vertical|start"
-			android:fontFamily="monospace"
-			android:textSize="30sp"
-	/>
-	
-	
-</RelativeLayout>
+    <TextView
+        android:id="@+id/number_result_string"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_vertical|end"
+        android:fontFamily="monospace"
+        android:gravity="right"
+        android:textSize="30sp" />
+
+
+</FrameLayout>

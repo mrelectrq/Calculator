@@ -6,11 +6,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,14 +33,14 @@ public class MainActivity extends AppCompatActivity {
     private final char SCADERE = '-';
     private final char INMULTIRE = '*';
     private final char IMPARTIRE = '/';
-    private double val1=0;
-    private double val2=0;
-    private double result=0;
+    private double val1 = 0;
+    private double val2 = 0;
+    private double result = 0;
     private char check;
     private String Edit;
     private RecyclerView numberList;
     private TextView resultCalc;
-    public String result_string;
+    public String result_string2;
     final ArrayList<String> rezultatele = new ArrayList<>();
 
     @Override
@@ -51,10 +48,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rezultatele.add("EGALITATE TEST?");
         // RecyclerView/////////////////////////////////////////////////////
-
-
 
 
         ///////////////////////////////////////////////////////
@@ -144,12 +138,11 @@ public class MainActivity extends AppCompatActivity {
         dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Edit=resultCalc.getText()+"";
+                Edit = resultCalc.getText() + "";
 
-                if(Edit.contains(".")) {
+                if (Edit.contains(".")) {
 
-                }
-                else {
+                } else {
 
                     resultCalc.setText(resultCalc.getText() + ".");
                 }
@@ -172,18 +165,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (resultCalc.getText().length()==1)
-                {
+                if (resultCalc.getText().length() == 1) {
 
                     resultCalc.setText(null);
                     resultCalc.setHint("0");
 
-                }
-                else {
+                } else {
                     resultCalc.setText(back("" + resultCalc.getText()));
                     resultCalc.setHint(null);
                 }
-                //Edit = resultCalc.getText()+"";
             }
         });
 
@@ -192,11 +182,19 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                val1 = Double.parseDouble( resultCalc.getText()+"");
+                val2 = Double.parseDouble(resultCalc.getText()+"");
+
+                check_operation();
+                calculation();
                 check = ADUNARE;
-                val1 = Double.parseDouble("0"+resultCalc.getText()) ;
-                result_string+="+"+resultCalc.getText(); //RecycleView
-                resultCalc.setHint(resultCalc.getText());
-                resultCalc.setText(null);
+                resultCalc.setHint(formatValue(result)+"");
+                resultCalc.setText("");
+
+
+                // Add char to string recycler
+
             }
         });
 
@@ -204,11 +202,14 @@ public class MainActivity extends AppCompatActivity {
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                val1 = Double.parseDouble( resultCalc.getText()+"");
+                val2 = Double.parseDouble(resultCalc.getText()+"");
+                check_operation();
+                calculation();
                 check = SCADERE;
+                resultCalc.setHint(formatValue(result)+"");
+                resultCalc.setText("");
 
-                val1 = Double.parseDouble("0"+resultCalc.getText());
-                resultCalc.setHint(resultCalc.getText());
-                resultCalc.setText(null);
 
             }
         });
@@ -217,10 +218,14 @@ public class MainActivity extends AppCompatActivity {
         div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                val1 = Double.parseDouble( resultCalc.getText()+"");
+                val2 = Double.parseDouble(resultCalc.getText()+"");
+                check_operation();
+                calculation();
                 check = IMPARTIRE;
-                val1 = Double.parseDouble("0"+ resultCalc.getText()) ;
-                resultCalc.setHint(resultCalc.getText());
-                resultCalc.setText(null);
+                resultCalc.setHint(formatValue(result)+"");
+                resultCalc.setText("");
+
 
             }
         });
@@ -229,11 +234,13 @@ public class MainActivity extends AppCompatActivity {
         mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                val1 = Double.parseDouble( resultCalc.getText()+"");
+                val2 = Double.parseDouble(resultCalc.getText()+"");
+                check_operation();
+                calculation();
                 check = INMULTIRE;
-                val1 = Double.parseDouble("0"+ resultCalc.getText());
-                resultCalc.setHint(resultCalc.getText());
-                resultCalc.setText(null);
-
+                resultCalc.setHint(formatValue(result)+"");
+                resultCalc.setText("");
 
             }
         });
@@ -243,36 +250,82 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                val1 = Double.parseDouble( resultCalc.getText()+"");
+                val2 = Double.parseDouble(resultCalc.getText()+"");
+                calculation();
 
 
-                    val2 = Double.parseDouble("0"+ resultCalc.getText() );
-                    calculation();
+                resultCalc.setText(formatValue(result));
+
+                if (check==ADUNARE) { result_string2 += "+" + formatValue(val2); }
+                    else if (check==SCADERE) { result_string2 += "-" + formatValue(val2); }
+                    else if (check==INMULTIRE) { result_string2 += "*" + formatValue(val2); }
+                    else if (check==IMPARTIRE) { result_string2 += "/" + formatValue(val2); }
 
 
-                    rezultatele.add(result_string+"="+result);
-                    RecycleAfis();
 
+                rezultatele.add(result_string2+"=" + formatValue(result));
+                recylcleInit();
+                result_string2=null;
             }
         });
     }
 
-    public void RecycleAfis(){
-        numberList=findViewById(R.id.recycler_view);
+    public void recylcleInit() {
+        numberList = findViewById(R.id.recycler_view);
         numberList.setLayoutManager(new LinearLayoutManager(this));
         numberList.setHasFixedSize(true);
-        StringsAdapter adapter = new StringsAdapter(this,rezultatele);
+        StringsAdapter adapter = new StringsAdapter(this, rezultatele);
         numberList.setAdapter(adapter);
+
     }
+
 
     public String back(String str) {
         if (str != null && str.length() > 0) {
             str = str.substring(0, str.length() - 1);
             return str;
-        }
-        else return str;
+        } else return str;
     }
 
 
+    public void check_operation(){
+        if (result_string2==null)
+        {
+            result_string2=formatValue(val2);
+        }
+        else if(check==ADUNARE) {result_string2 += "+" + formatValue(val2);}
+        else if(check==INMULTIRE) {result_string2 += "*" + formatValue(val2);}
+        else if(check==IMPARTIRE) {result_string2 += "/" + formatValue(val2);}
+        else if(check==SCADERE) {result_string2 += "-" + formatValue(val2);}
+    }
+
+
+
+    public void adunare()
+    {
+        if(result==0) {result+=val1;}
+        else {result+=val2;}
+
+    }
+
+    public void scadere()
+    {
+        if(result==0) {result+=val1;}
+        else {result-=val2;}
+    }
+
+    public void impartire()
+    {
+        if(result==0) {result+=val1;}
+        else {result/=val2;}
+    }
+
+    public void inmultire()
+    {
+        if(result==0) {result+=val1;}
+        else {result*=val2;}
+    }
 
     public String formatValue(double d) {
         String dStr = String.valueOf(d);
@@ -284,23 +337,25 @@ public class MainActivity extends AppCompatActivity {
 
         switch (check) {
             case ADUNARE:
-                result = val1 + val2;
-                resultCalc.setText(formatValue(result) );
+                    adunare();
                 break;
-            case INMULTIRE:
 
-                resultCalc.setText(formatValue(val1 * val2) );
-                break;
             case SCADERE:
-                result = val1-val2;
-
-                resultCalc.setText(formatValue(result));
+                scadere();
                 break;
+
+
+            case INMULTIRE:
+                inmultire();
+                break;
+
             case IMPARTIRE:
-
-                result=val1/val2;
-                resultCalc.setText(formatValue(result));
+                impartire();
                 break;
+
+                default:
+                    adunare();
+
         }
     }
 }
