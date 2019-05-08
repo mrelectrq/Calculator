@@ -57,7 +57,7 @@
     <last-search-timestamp>1557211006641</last-search-timestamp>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f89dadc-0b4b-40b6-8b36-e9839286c49d" name="Default Changelist" comment="">
+    <list default="true" id="9f89dadc-0b4b-40b6-8b36-e9839286c49d" name="Default Changelist" comment="Change 08.05">
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -65,14 +65,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/startaplication/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/startaplication/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/startaplication/StringsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/startaplication/StringsAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/startaplication/utils/SwipeToDeleteCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/startaplication/utils/SwipeToDeleteCallback.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_add_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_add_item.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,11 +94,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="283" selection-start-line="283" selection-end-line="283" />
+            <state relative-caret-position="90">
+              <caret line="6" column="60" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="60" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-manifest" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -123,11 +130,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/startaplication/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="434" column="29" selection-start-line="434" selection-start-column="29" selection-end-line="434" selection-end-column="29" />
+            <state relative-caret-position="244">
+              <caret line="245" selection-start-line="245" selection-end-line="245" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4595#4683#1" />
@@ -137,37 +144,25 @@
                 <element signature="e#7797#7798#0" expanded="true" />
                 <element signature="method#back#0;class#MainActivity#0" />
                 <element signature="method#check_operation#0;class#MainActivity#0" />
-                <element signature="method#adunare#0;class#MainActivity#0" />
                 <element signature="method#scadere#0;class#MainActivity#0" />
                 <element signature="method#impartire#0;class#MainActivity#0" />
                 <element signature="method#inmultire#0;class#MainActivity#0" />
-                <element signature="method#formatValue#0;class#MainActivity#0" />
-                <element signature="method#calculation#0;class#MainActivity#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/startaplication/StringsAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="885">
-              <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#987#988#0" expanded="true" />
-                <element signature="e#998#999#0" expanded="true" />
-                <element signature="e#1540#1541#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4e5d443c9233fdee56c0d875255988fc/jars/classes.jar!/android/support/v4/content/ContextCompat.class">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/startaplication/StringsAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="150" column="33" selection-start-line="150" selection-start-column="27" selection-end-line="150" selection-end-column="33" />
+            <state relative-caret-position="691">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#987#988#0" expanded="true" />
+                <element signature="e#998#999#0" expanded="true" />
+                <element signature="e#1540#1541#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -196,7 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/startaplication/utils/inmultire.java" />
         <option value="$PROJECT_DIR$/appcalculator/src/main/java/com/example/appcalculator/MainActivity.java" />
         <option value="$PROJECT_DIR$/appcalculator/src/main/res/layout/activity_main.xml" />
@@ -208,11 +202,12 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/add_list_item.xml" />
         <option value="$PROJECT_DIR$/local.properties" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/startaplication/utils/Operations.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/startaplication/utils/SwipeToDeleteCallback.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_add_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/startaplication/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/startaplication/StringsAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/startaplication/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -498,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557231190538</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Change 08.05">
+      <created>1557313554201</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1557313554201</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -512,10 +514,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="23" width="1442" height="1337" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.305" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.305" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -524,9 +525,9 @@
       <window_info id="Resources Explorer" order="7" weight="0.32980332" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Run" order="0" weight="0.2907453" />
-      <window_info anchor="bottom" id="Logcat" order="1" visible="true" weight="0.32651392" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.32651392" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32733223" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.33988535" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3396072" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.3277311" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.3277311" />
@@ -575,7 +576,20 @@
     <MESSAGE value="Test1" />
     <MESSAGE value="View change one" />
     <MESSAGE value="Change 07.05" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change 07.05" />
+    <MESSAGE value="Change 08.05" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change 08.05" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/startaplication/MainActivity.java</url>
+          <line>245</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -593,14 +607,6 @@
     <entry file="file://$PROJECT_DIR$/appcalculator/src/main/AndroidManifest.xml" />
     <entry file="file://$PROJECT_DIR$/appcalculator/src/main/res/layout/activity_main.xml" />
     <entry file="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/dfeb581a2d9505ade75e3ffa3ab9ee4c/res/values/values.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="63" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
     <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-28/android/widget/TextView.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml">
       <provider selected="true" editor-type-id="text-editor" />
@@ -612,7 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-28/android/view/View.java" />
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
@@ -640,34 +645,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="55" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4e5d443c9233fdee56c0d875255988fc/jars/classes.jar!/android/support/v4/content/ContextCompat.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="150" column="33" selection-start-line="150" selection-start-column="27" selection-end-line="150" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/state.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="5" selection-end-column="11" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="283" selection-start-line="283" selection-end-line="283" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/startaplication/utils/SwipeToDeleteCallback.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -701,10 +684,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="55" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4e5d443c9233fdee56c0d875255988fc/jars/classes.jar!/android/support/v4/content/ContextCompat.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-505">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/startaplication/StringsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="691">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#987#988#0" expanded="true" />
+            <element signature="e#998#999#0" expanded="true" />
+            <element signature="e#1540#1541#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3958695c2d2d8e8d65d7a72096b43dae/jars/classes.jar!/android/support/v7/widget/DividerItemDecoration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="60" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="60" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-28/android/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="7340" selection-start-line="7340" selection-end-line="7340" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/startaplication/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="434" column="29" selection-start-line="434" selection-start-column="29" selection-end-line="434" selection-end-column="29" />
+        <state relative-caret-position="244">
+          <caret line="245" selection-start-line="245" selection-end-line="245" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4595#4683#1" />
@@ -714,25 +754,9 @@
             <element signature="e#7797#7798#0" expanded="true" />
             <element signature="method#back#0;class#MainActivity#0" />
             <element signature="method#check_operation#0;class#MainActivity#0" />
-            <element signature="method#adunare#0;class#MainActivity#0" />
             <element signature="method#scadere#0;class#MainActivity#0" />
             <element signature="method#impartire#0;class#MainActivity#0" />
             <element signature="method#inmultire#0;class#MainActivity#0" />
-            <element signature="method#formatValue#0;class#MainActivity#0" />
-            <element signature="method#calculation#0;class#MainActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/startaplication/StringsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#987#988#0" expanded="true" />
-            <element signature="e#998#999#0" expanded="true" />
-            <element signature="e#1540#1541#0" expanded="true" />
           </folding>
         </state>
       </provider>

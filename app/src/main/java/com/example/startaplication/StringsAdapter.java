@@ -58,12 +58,14 @@ public class StringsAdapter extends RecyclerView.Adapter<StringsAdapter.StringHo
     public void addItem(String value) {
         notes.add(0, value);
         notifyItemInserted(0);
+
     }
 
     public void removeItem(int position) {
         notes.remove(position);
         notifyItemRemoved(position);
     }
+
 
 
 }

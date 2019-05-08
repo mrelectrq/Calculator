@@ -1,17 +1,19 @@
 package com.example.startaplication;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
     private TextView one;
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private final char IMPARTIRE = '/';
     private double val1 = 0;
     private double val2 = 0;
-    private double result = 0;
+    private double result = 0 ;
     private char check;
     private String Edit;
     private TextView resultCalc;
@@ -237,8 +239,8 @@ public class MainActivity extends AppCompatActivity {
                 if (resultCalc.getText()=="")
                 {val1=val2=0;}
                 else {
-                    val1 = Double.parseDouble(resultCalc.getText() + "");
-                    val2 = Double.parseDouble(resultCalc.getText() + "");
+                    val1 = Double.valueOf(resultCalc.getText() + "");
+                    val2 = Double.valueOf(resultCalc.getText() + "");
                 }
 
                 check_operation();
@@ -436,6 +438,9 @@ public class MainActivity extends AppCompatActivity {
         numberList.setAdapter(adapter);
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
         itemTouchHelper.attachToRecyclerView(numberList);
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(numberList.getContext(), LinearLayoutManager.VERTICAL);
+        numberList.addItemDecoration(dividerItemDecoration);
     }
 
 
@@ -450,6 +455,9 @@ public class MainActivity extends AppCompatActivity {
             adapter.removeItem(viewHolder.getLayoutPosition());
         }
     };
+
+
+
 
 
 }
