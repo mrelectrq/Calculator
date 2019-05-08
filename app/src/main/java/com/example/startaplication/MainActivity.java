@@ -1,9 +1,12 @@
 package com.example.startaplication;
 
+import android.support.annotation.NonNull;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -38,34 +41,43 @@ public class MainActivity extends AppCompatActivity {
     private double result = 0;
     private char check;
     private String Edit;
-    private RecyclerView numberList;
     private TextView resultCalc;
     public String result_string2;
-    final ArrayList<String> rezultatele = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        recylcleInit();
 
-        // RecyclerView/////////////////////////////////////////////////////
 
-
-        ///////////////////////////////////////////////////////
         one = findViewById(R.id.button_one);
         one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultCalc.setText(resultCalc.getText() + "1");
+                if (resultCalc.getText()=="0")
+                {
+                    resultCalc.setText("1");
+                }
+                else
+                    resultCalc.setText(resultCalc.getText() + "1");
             }
         });
         resultCalc = findViewById(R.id.resultCalc);
+        resultCalc.setText("0");
 
         two = findViewById(R.id.button_two);
         two.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (resultCalc.getText()=="0")
+                {
+                    resultCalc.setText("2");
+                }
+                else
                 resultCalc.setText(resultCalc.getText() + "2");
+
+
             }
         });
 
@@ -73,7 +85,12 @@ public class MainActivity extends AppCompatActivity {
         three.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultCalc.setText(resultCalc.getText() + "3");
+                if (resultCalc.getText()=="0")
+                {
+                    resultCalc.setText("3");
+                }
+                else
+                    resultCalc.setText(resultCalc.getText() + "3");
             }
         });
 
@@ -81,7 +98,12 @@ public class MainActivity extends AppCompatActivity {
         four.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultCalc.setText(resultCalc.getText() + "4");
+                               if (resultCalc.getText()=="0")
+                {
+                    resultCalc.setText("4");
+                }
+                else
+                    resultCalc.setText(resultCalc.getText() + "4");
             }
         });
 
@@ -89,7 +111,12 @@ public class MainActivity extends AppCompatActivity {
         five.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultCalc.setText(resultCalc.getText() + "5");
+                if (resultCalc.getText()=="0")
+                {
+                    resultCalc.setText("5");
+                }
+                else
+                    resultCalc.setText(resultCalc.getText() + "5");
             }
         });
 
@@ -97,7 +124,12 @@ public class MainActivity extends AppCompatActivity {
         six.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultCalc.setText(resultCalc.getText() + "6");
+                if (resultCalc.getText()=="0")
+                {
+                    resultCalc.setText("6");
+                }
+                else
+                    resultCalc.setText(resultCalc.getText() + "6");
             }
         });
 
@@ -105,7 +137,12 @@ public class MainActivity extends AppCompatActivity {
         seven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultCalc.setText(resultCalc.getText() + "7");
+                                if (resultCalc.getText()=="0")
+                {
+                    resultCalc.setText("7");
+                }
+                else
+                    resultCalc.setText(resultCalc.getText() + "7");
             }
         });
 
@@ -113,7 +150,12 @@ public class MainActivity extends AppCompatActivity {
         eight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultCalc.setText(resultCalc.getText() + "8");
+                if (resultCalc.getText()=="0")
+                {
+                    resultCalc.setText("8");
+                }
+                else
+                    resultCalc.setText(resultCalc.getText() + "8");
             }
         });
 
@@ -121,7 +163,12 @@ public class MainActivity extends AppCompatActivity {
         nine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultCalc.setText(resultCalc.getText() + "9");
+                if (resultCalc.getText()=="0")
+                {
+                    resultCalc.setText("9");
+                }
+                else
+                    resultCalc.setText(resultCalc.getText() + "9");
             }
         });
 
@@ -129,7 +176,12 @@ public class MainActivity extends AppCompatActivity {
         zero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultCalc.setText(resultCalc.getText() + "0");
+                if (resultCalc.getText()!="0")
+                {
+                    resultCalc.setText(resultCalc.getText() + "0");
+                }
+
+
             }
         });
 
@@ -154,8 +206,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 val2 = val1 = result = 0;
-                resultCalc.setText(null);
-                resultCalc.setHint("0");
+                resultCalc.setText("0");
+
             }
         });
 
@@ -182,9 +234,12 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                val1 = Double.parseDouble( resultCalc.getText()+"");
-                val2 = Double.parseDouble(resultCalc.getText()+"");
+                if (resultCalc.getText()=="")
+                {val1=val2=0;}
+                else {
+                    val1 = Double.parseDouble(resultCalc.getText() + "");
+                    val2 = Double.parseDouble(resultCalc.getText() + "");
+                }
 
                 check_operation();
                 calculation();
@@ -202,8 +257,12 @@ public class MainActivity extends AppCompatActivity {
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                val1 = Double.parseDouble( resultCalc.getText()+"");
-                val2 = Double.parseDouble(resultCalc.getText()+"");
+                if (resultCalc.getText()=="")
+                {val1=val2=0;}
+                else {
+                    val1 = Double.parseDouble(resultCalc.getText() + "");
+                    val2 = Double.parseDouble(resultCalc.getText() + "");
+                }
                 check_operation();
                 calculation();
                 check = SCADERE;
@@ -218,8 +277,12 @@ public class MainActivity extends AppCompatActivity {
         div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                val1 = Double.parseDouble( resultCalc.getText()+"");
-                val2 = Double.parseDouble(resultCalc.getText()+"");
+                if (resultCalc.getText()=="")
+                {val1=val2=0;}
+                else {
+                    val1 = Double.parseDouble(resultCalc.getText() + "");
+                    val2 = Double.parseDouble(resultCalc.getText() + "");
+                }
                 check_operation();
                 calculation();
                 check = IMPARTIRE;
@@ -234,8 +297,12 @@ public class MainActivity extends AppCompatActivity {
         mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                val1 = Double.parseDouble( resultCalc.getText()+"");
-                val2 = Double.parseDouble(resultCalc.getText()+"");
+                if (resultCalc.getText()=="")
+                {val1=val2=0;}
+                else {
+                    val1 = Double.parseDouble(resultCalc.getText() + "");
+                    val2 = Double.parseDouble(resultCalc.getText() + "");
+                }
                 check_operation();
                 calculation();
                 check = INMULTIRE;
@@ -250,10 +317,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                val1 = Double.parseDouble( resultCalc.getText()+"");
-                val2 = Double.parseDouble(resultCalc.getText()+"");
+                if (resultCalc.getText()=="")
+                {val1=val2=0;}
+                else {
+                    val1 = Double.parseDouble(resultCalc.getText() + "");
+                    val2 = Double.parseDouble(resultCalc.getText() + "");
+                }
                 calculation();
 
+                if(val1==0 && val2==0 && result==0 )
+                    return;
 
                 resultCalc.setText(formatValue(result));
 
@@ -264,22 +337,16 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                rezultatele.add(result_string2+"=" + formatValue(result));
-                recylcleInit();
+//                rezultatele.add(result_string2+"=" + formatValue(result));
+                adapter.addItem(result_string2+"=" + formatValue(result));
                 result_string2=null;
+                resultCalc.setText("");
+                resultCalc.setHint("0");
+                result=0;
             }
         });
-    }
-
-    public void recylcleInit() {
-        numberList = findViewById(R.id.recycler_view);
-        numberList.setLayoutManager(new LinearLayoutManager(this));
-        numberList.setHasFixedSize(true);
-        StringsAdapter adapter = new StringsAdapter(this, rezultatele);
-        numberList.setAdapter(adapter);
 
     }
-
 
     public String back(String str) {
         if (str != null && str.length() > 0) {
@@ -299,8 +366,6 @@ public class MainActivity extends AppCompatActivity {
         else if(check==IMPARTIRE) {result_string2 += "/" + formatValue(val2);}
         else if(check==SCADERE) {result_string2 += "-" + formatValue(val2);}
     }
-
-
 
     public void adunare()
     {
@@ -326,12 +391,10 @@ public class MainActivity extends AppCompatActivity {
         if(result==0) {result+=val1;}
         else {result*=val2;}
     }
-
     public String formatValue(double d) {
         String dStr = String.valueOf(d);
         return dStr.matches("\\d+\\.\\d*[1-9]\\d*") ? dStr : dStr.substring(0, dStr.indexOf("."));
     }
-
     public void calculation() {
 
 
@@ -358,6 +421,37 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+    private RecyclerView numberList;
+
+    ArrayList<String> rezultatele = new ArrayList<>();
+    public StringsAdapter adapter;
+    public void recylcleInit() {
+
+
+        numberList = findViewById(R.id.recycler_view);
+        numberList.setLayoutManager(new LinearLayoutManager(this));
+        numberList.setHasFixedSize(true);
+        adapter = new StringsAdapter(rezultatele);
+        numberList.setAdapter(adapter);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
+        itemTouchHelper.attachToRecyclerView(numberList);
+    }
+
+
+    ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT| ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder viewHolder1) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+            adapter.removeItem(viewHolder.getLayoutPosition());
+        }
+    };
+
+
 }
 
 

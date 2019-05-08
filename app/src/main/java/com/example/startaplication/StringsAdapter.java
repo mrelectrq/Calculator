@@ -17,28 +17,36 @@ import org.w3c.dom.Node;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StringsAdapter extends RecyclerView.Adapter<StringsAdapter.StringHolder>{
+public class StringsAdapter extends RecyclerView.Adapter<StringsAdapter.StringHolder> {
 
-    private List<String> notes = new ArrayList<>();
-    private LayoutInflater mInflater;
-    private AdapterView.OnItemClickListener mClickListener;
+    private ArrayList<String> notes;
 
-    StringsAdapter(Context context, List<String> data){
-        this.mInflater= LayoutInflater.from(context);
-        this.notes=data;
+    public class StringHolder extends RecyclerView.ViewHolder {
+        private TextView textViewDescription;
+
+        public StringHolder(View itemView) {
+            super(itemView);
+            textViewDescription = itemView.findViewById(R.id.number_result_string);
+        }
+
     }
+
+    public StringsAdapter(ArrayList<String> data) {
+        this.notes = data;
+    }
+
+
     @NonNull
     @Override
-    public StringHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = mInflater.inflate(R.layout.list_add_item, viewGroup, false);
+    public StringHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+        View itemview = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_add_item, parent, false);
 
-        return new StringHolder(view);
+        return new StringHolder(itemview);
     }
 
     @Override
     public void onBindViewHolder(@NonNull StringHolder stringHolder, int i) {
-        String currentnote = notes.get(i);
-        stringHolder.textViewDescription.setText(currentnote);
+        stringHolder.textViewDescription.setText(notes.get(i));
     }
 
     @Override
@@ -46,19 +54,16 @@ public class StringsAdapter extends RecyclerView.Adapter<StringsAdapter.StringHo
         return notes.size();
     }
 
-    public void setNotes(List<String> notes){
-        this.notes=notes;
 
+    public void addItem(String value) {
+        notes.add(0, value);
+        notifyItemInserted(0);
     }
 
-    class StringHolder extends  RecyclerView.ViewHolder{
-        private TextView textViewDescription;
-
-        public  StringHolder(View itemView){
-            super(itemView);
-            textViewDescription= itemView.findViewById(R.id.number_result_string);
-        }
-
+    public void removeItem(int position) {
+        notes.remove(position);
+        notifyItemRemoved(position);
     }
+
 
 }
