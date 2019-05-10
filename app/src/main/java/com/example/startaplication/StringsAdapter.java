@@ -56,6 +56,8 @@ public class StringsAdapter extends RecyclerView.Adapter<StringsAdapter.StringHo
 
 
     public void addItem(String value) {
+
+        value.replace(" ","");
         notes.add(0, value);
         notifyItemInserted(0);
 
